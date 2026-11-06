@@ -76,7 +76,8 @@ The same rig logic exists on three platforms: ESPHome on an ESP32, this Trend IQ
 ## Open items before power-up
 
 - I/O count and types from the IQ411 datasheet (into the [I/O schedule](data/iq411-io-schedule.csv)).
-- SET version and licence route.
+- **SET access first:** Trend's engineering tools have generally been licensed through its partner network, so confirm the version and licence route (a Trend partner or distributor) before the strategy work depends on it. The IQ4 family's **built-in web interface** covers basic set-up and point checks meanwhile.
+- **BACnet/IP:** check whether this model and firmware support it. If so, the controller can also be read by the [BACnet/IP explorer](https://github.com/the-control-cabinet/bacnet-ip-network-explorer) (YABE and Home Assistant) and by Niagara.
 - PC connection method and network options (Trend LAN / BACnet) for this model and firmware.
 
 ## Documents
@@ -89,11 +90,13 @@ The same rig logic exists on three platforms: ESPHome on an ESP32, this Trend IQ
 
 ## Roadmap
 - [ ] Record the IQ411 I/O and comms details from the datasheet
-- [ ] Source or confirm SET access
+- [ ] Source or confirm SET access (Trend partner route); meanwhile, the IQ4 web interface
+- [ ] Check BACnet/IP support on this firmware
 - [ ] Power up, address and connect
 - [ ] Point-to-point I/O commissioning
 - [ ] Strategy: duty/standby → interlocks → PID
 - [ ] Comparison write-up vs ESP32
+- [ ] Supervisor view: the IQ411 in Niagara (Trend driver), part of the Niagara familiarisation via the Niagara 4 TCP
 
 ## Skills demonstrated (as built)
 | Skill | Evidence |
